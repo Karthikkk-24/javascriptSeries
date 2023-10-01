@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing DOM</title>
+</head>
+
+<body>
+    <h3>My Favorite Bike Brands</h3>
+    <ul id="bikeList">
+        <li>Kawasaki</li>
+        <li>Ducati</li>
+        <li>TVS</li>
+    </ul>
+    <script>
+        const bikeList = document.getElementById('bikeList');
+        console.log(bikeList.firstElementChild.textContent); // Kawasaki
+        console.log(bikeList.lastElementChild.textContent); // TVS
+        console.log(bikeList.children[1].textContent); // Ducati
+    </script>
+</body>
+
+</html>

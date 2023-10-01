@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content</title>
+</head>
+
+<body>
+    <ul id="bikeList"></ul>
+    <script>
+        const bikeList = document.getElementById('bikeList');
+        const liTag = document.createElement('li');
+        liTag.textContent = 'Kawasaki';
+        bikeList.appendChild(liTag);
+        const liTag1 = document.createElement('li');
+        liTag1.textContent = 'Ducati';
+        bikeList.appendChild(liTag1);
+        const liTag2 = document.createElement('li');
+        liTag2.textContent = 'TVS';
+        bikeList.appendChild(liTag2);
+    </script>
+</body>
+
+</html>
