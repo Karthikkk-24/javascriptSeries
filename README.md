@@ -15,7 +15,7 @@ This repository is organized into folders representing different topics and leve
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/Karthikkk-24/javascript-tutorials.git
+   git clone https://github.com/Karthikkk-24/javascriptSeries.git
    cd javascript-tutorials
    ```
 
