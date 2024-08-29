@@ -1,4 +1,4 @@
-// Depth First Search
+// Breadth First Search
 
 class Graph {
     constructor() {
@@ -16,20 +16,30 @@ class Graph {
         this.adjacencyList[vertex2].push(vertex1);
     }
 
-    dfsRecursive(start, visited = new Set(), result = []) {
+    bfs(start) {
+        const queue = [start];
+        const visited = new Set();
+        let result = [];
         visited.add(start);
-        result.push(start);
 
-        this.adjacencyList[start].forEach((neighbor) => {
-            if (!visited.has(neighbor)) {
-                this.dfsRecursive(neighbor, visited, result);
-            }
-        });
+        while (queue.length) {
+            const vertex = queue.shift();
+            result.push(vertex);
+
+            this.adjacencyList[vertex].forEach((neighbor) => {
+                if (!visited.has(neighbor)) {
+                    visited.add(neighbor);
+                    queue.push(neighbor);
+                }
+            });
+        }
         return result;
-    }
+    }    
 }
 
+
 const graph = new Graph();
+
 graph.addVertex('A');
 graph.addVertex('B');
 graph.addVertex('C');
@@ -43,4 +53,4 @@ graph.addEdge('B', 'D');
 graph.addEdge('C', 'E');
 graph.addEdge('D', 'E');
 
-console.log(graph.dfsRecursive('A'));
+console.log(graph.bfs('A'));
